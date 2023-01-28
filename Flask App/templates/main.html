@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Video Streaming App</title>
+    <style>
+      /* CSS for positioning the video player in the center of the page */
+      .video-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      /* CSS for the video player itself */
+      video {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-container">
+      <video id="videoPlayer" controls>
+        <source src="{{url_for('video_feed')}}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button id="playBtn" onclick="playVideo()">Play</button>
+      <button id="pauseBtn" onclick="pauseVideo()">Pause</button>
+    </div>
+    <script>
+      // JavaScript function to play the video
+      function playVideo() {
+        var videoPlayer = document.getElementById("videoPlayer");
+        videoPlayer.play();
+      }
+      // JavaScript function to pause the video
+      function pauseVideo() {
+        var videoPlayer = document.getElementById("videoPlayer");
+        videoPlayer.pause();
+      }
+    </script>
+  </body>
+</html>
